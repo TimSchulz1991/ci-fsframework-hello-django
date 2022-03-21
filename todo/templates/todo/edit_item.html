@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Edit a todo item</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <!-- This token is necessary for Django to accept the form without error. Will be added to form as hidden input field tp prevent the POST happening from anywhere else than our form. -->
+        {{ form.as_p }} 
+        <!-- as_p is added to render the form as paragraphs -->
+        <div>
+            <p>
+                <button type="submit">Update Item</button>
+            </p>
+        </div>
+    </form>
+</body>
+
+</html>
